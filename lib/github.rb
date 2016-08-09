@@ -8,10 +8,8 @@ class Github
 
   def favourites_languages
     json = load_json
-    
     favourites = {}  
     json.each do |l| 
-
       if l.class.to_s == "Hash"
         if l["language"].to_s.strip != ""
           favourites[l["language"]] ||= 0
