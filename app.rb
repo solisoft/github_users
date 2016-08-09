@@ -1,4 +1,4 @@
-require "./github.rb"
+require "./lib/github.rb"
 
 if ARGV[0]
   github = Github.new ARGV[0]

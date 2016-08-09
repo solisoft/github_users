@@ -1,4 +1,4 @@
-require "./github.rb"
+require "github"
 
 RSpec.describe Github, "#languages" do
   it "contain many languages" do
