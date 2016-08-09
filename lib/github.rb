@@ -6,6 +6,7 @@ class Github
     @login = login
   end
 
+  # Get all languages used by @login and return an unsorted Hash
   def favourites_languages
     json = load_json
     favourites = {}  
@@ -20,6 +21,7 @@ class Github
     favourites
   end
 
+  # Sort languages by usage and display text
   def display_favourites_languages
     favourites = favourites_languages
     puts "#{@login}'s favourites languages :"
@@ -29,6 +31,7 @@ class Github
   end
 
 private
+  # Load data from github's API
   def load_json
     uri = URI.parse("https://api.github.com/users/#{@login}/repos")
     http = Net::HTTP.new(uri.host, uri.port)
